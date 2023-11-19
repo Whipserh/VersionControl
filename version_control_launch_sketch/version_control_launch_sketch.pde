@@ -7,13 +7,15 @@ void setup(){
 
 void draw(){
   background(0);
-  for (int i = particles.size() - 1; 0 <= i; i--){
-    particles.get(i).update();
-    particles.get(i).display();
+  
+  for (int j = particles.size() - 1; 0 <= j; j--){
+    particles.get(j).update();
+    particles.get(j).display();
     //delete any particles that are out of bounds
-    if(particles.get(i).position.y >= height){
-      particles.remove(i);
+    if(particles.get(j).position.y >= height){
+      particles.remove(j);
     }
+  
   }
   if(mousePressed == true) {
     particles.add(new Particle(mouseX, mouseY));
